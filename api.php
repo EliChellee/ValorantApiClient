@@ -6,7 +6,7 @@ header('Content-Type: application/json');
 $method = $_SERVER['REQUEST_METHOD'];
 
 if ($method == 'GET') {
-    $stmt = $pdo->prepare("SELECT players.PlayerID, players.username, players.email, players.player_rank, match_details.MatchID, match_details.MapID FROM players LEFT JOIN match_details ON players.PlayerID = match_details.PlayerID");
+    $stmt = $pdo->prepare("SELECT players.*, player_statistics.* FROM players LEFT JOIN player_statistics ON players.PlayerID = player_statistics.PlayerID");
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($result);
@@ -34,6 +34,11 @@ if ($method == 'GET') {
     ]);
 
     $playerId = $pdo->lastInsertId();
+    
+    // Insert default statistics for the new player
+    $stmt = $pdo->prepare("INSERT INTO player_statistics (PlayerID, MatchesPlayed, Kills, Deaths, Assists, Wins, Losses) VALUES (?, 0, 0, 0, 0, 0, 0)");
+    $stmt->execute([$playerId]);
+
     echo json_encode(['PlayerID' => $playerId, 'username' => $username, 'email' => $email, 'player_rank' => $player_rank ]);
 }
 ?>
