@@ -15,19 +15,29 @@ namespace ValorantApiClient
         {
             string apiUrl = "http://localhost/valorantapi/api.php";
 
-            // Perform GET request
-            await GetPlayers(apiUrl);
+            // Perform GET request for players
+            await GetPlayers(apiUrl + "?request=get_players");
 
-            // Perform POST request
-            await CreatePlayer(apiUrl, "JaneDoe", "jane@example.com", "2000-01-01", "Gold", "password123", "active", 0, 4);
+            // Perform POST request to create a player
+            await CreatePlayer(apiUrl + "?request=add_player", "JaneDoe", "jane@example.com", "2000-01-01", "Gold", "password123", "active", 0, 4);
         }
 
         static async Task GetPlayers(string url)
         {
             var response = await client.GetStringAsync(url);
-            var formattedResponse = JArray.Parse(response).ToString(Formatting.Indented);
-            Console.WriteLine("GET Response:");
-            Console.WriteLine(formattedResponse);
+            Console.WriteLine("Raw GET Players Response:");
+            Console.WriteLine(response);
+            try
+            {
+                var formattedResponse = JArray.Parse(response).ToString(Formatting.Indented);
+                Console.WriteLine("Formatted GET Players Response:");
+                Console.WriteLine(formattedResponse);
+            }
+            catch (JsonReaderException e)
+            {
+                Console.WriteLine("Error parsing JSON response:");
+                Console.WriteLine(e.Message);
+            }
         }
 
         static async Task CreatePlayer(string url, string username, string email, string birthday, string player_rank, string password, string status, int is_admin, int player_rank_numeric)
@@ -48,9 +58,19 @@ namespace ValorantApiClient
 
             var response = await client.PostAsync(url, data);
             string result = await response.Content.ReadAsStringAsync();
-            var formattedResult = JObject.Parse(result).ToString(Formatting.Indented);
-            Console.WriteLine("POST Response:");
-            Console.WriteLine(formattedResult);
+            Console.WriteLine("Raw POST Player Response:");
+            Console.WriteLine(result);
+            try
+            {
+                var formattedResult = JObject.Parse(result).ToString(Formatting.Indented);
+                Console.WriteLine("Formatted POST Player Response:");
+                Console.WriteLine(formattedResult);
+            }
+            catch (JsonReaderException e)
+            {
+                Console.WriteLine("Error parsing JSON response:");
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
