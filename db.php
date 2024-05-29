@@ -2,7 +2,7 @@
 $host = 'localhost';
 $dbname = 'valorantplayersdb';
 $username = 'root';
-$password = 'rachelle040403';
+$password = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
