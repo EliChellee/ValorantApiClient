@@ -1,0 +1,17 @@
+C:\Users\Rachelle\source\repos\ValorantApiClient\bin\Debug\net8.0\ValorantApiClient.exe
+C:\Users\Rachelle\source\repos\ValorantApiClient\bin\Debug\net8.0\ValorantApiClient.deps.json
+C:\Users\Rachelle\source\repos\ValorantApiClient\bin\Debug\net8.0\ValorantApiClient.runtimeconfig.json
+C:\Users\Rachelle\source\repos\ValorantApiClient\bin\Debug\net8.0\ValorantApiClient.dll
+C:\Users\Rachelle\source\repos\ValorantApiClient\bin\Debug\net8.0\ValorantApiClient.pdb
+C:\Users\Rachelle\source\repos\ValorantApiClient\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ValorantApiClient.csproj.AssemblyReference.cache
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ValorantApiClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ValorantApiClient.AssemblyInfoInputs.cache
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ValorantApiClient.AssemblyInfo.cs
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ValorantApiClient.csproj.CoreCompileInputs.cache
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\Valorant.8FA9ED73.Up2Date
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ValorantApiClient.dll
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\refint\ValorantApiClient.dll
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ValorantApiClient.pdb
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ValorantApiClient.genruntimeconfig.cache
+C:\Users\Rachelle\source\repos\ValorantApiClient\obj\Debug\net8.0\ref\ValorantApiClient.dll
